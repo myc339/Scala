@@ -96,6 +96,8 @@ class LazyListSpec extends FlatSpec with Matchers {
     val y = x drop 3 take 3
     // 4 5 6 7 .....
     y.toSeq shouldBe Seq(4, 5,6)
+    val z=LazyList.from(2,2)
+    z.take(4).toSeq shouldBe Seq(2,4,6,8)
   }
 
 

@@ -1,0 +1,31 @@
+
+case class Stock(cusip: String, price: Int)
+
+object HTTP  {
+  import scala.concurrent.Future
+  import scala.io.Source
+
+  def httpGet(s: String): Future[String] = {
+    import scala.concurrent.ExecutionContext.Implicits.global
+    Future(Source.fromURL(s).mkString)
+  }
+}
+/* serialize and deserialize the result get by httpGet  using jsonFormat2 function
+*  like jsonFormat2(Stock.apply)*/
+object Serialize{
+
+}
+/* apply stock method here for use jsonformat2 function in spary to deserialize json data*/
+object Stock{
+  def apply(cusip: String, price: Int)=
+}
+
+object Q10 extends App {
+
+    val url= "https://www1.coe.neu.edu/~yliaozheng/" // url that we need to send  request
+    HTTP.httpGet(url)///get result by httpGet
+    //await for response
+    // print result
+
+
+}
